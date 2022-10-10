@@ -1,0 +1,168 @@
+{
+    "wallboardName": "Recalls",
+    "comment": " ",
+    "secKey": " ",
+    "isPublic": false,
+    "pages": [
+        {
+            "name": "To be made",
+            "duration": 30,
+            "columns": 6,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "CL01",
+                    "title": "Today",
+                    "cfg": {}
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 1,
+                        "width": 5,
+                        "height": 3
+                    },
+                    "type": "DB01",
+                    "title": "Recalls to be made",
+                    "cfg": {
+                        "dataBlockView": {
+                            "label": "UN21 - KoDO.UnansweredNumbersToRecall",
+                            "value": "KoDO.UnansweredNumbersToRecall"
+                        },
+                        "columns": [
+                            {
+                                "label": "Caller",
+                                "value": "cld_caller"
+                            },
+                            {
+                                "label": "Successful",
+                                "value": "ko_succ_n"
+                            },
+                            {
+                                "label": "Agent",
+                                "value": "ko_succ_a"
+                            },
+                            {
+                                "label": "N Short",
+                                "value": "ko_sho_n"
+                            },
+                            {
+                                "label": "N Lost",
+                                "value": "ko_lst_n"
+                            },
+                            {
+                                "label": "Last Lost",
+                                "value": "ko_lst_t"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 0,
+                        "width": 1,
+                        "height": 2
+                    },
+                    "type": "DB02",
+                    "title": "Recalls",
+                    "cfg": {
+                        "dataBlockViewChart": {
+                            "label": "UN23 - KoDO.UnansweredNumbersRecallRecap",
+                            "value": "KoDO.UnansweredNumbersRecallRecap"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "New View",
+            "duration": 30,
+            "columns": 8,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 3,
+                        "width": 5,
+                        "height": 3
+                    },
+                    "type": "DB01",
+                    "title": "Already Recalled",
+                    "cfg": {
+                        "dataBlockView": {
+                            "label": "UN22 - KoDO.UnansweredNumbersRecalled",
+                            "value": "KoDO.UnansweredNumbersRecalled"
+                        },
+                        "columns": [
+                            {
+                                "label": "Caller",
+                                "value": "cld_caller"
+                            },
+                            {
+                                "label": "Successful",
+                                "value": "ko_succ_n"
+                            },
+                            {
+                                "label": "Succ.Last",
+                                "value": "ko_succ_t"
+                            },
+                            {
+                                "label": "Succ.Q.",
+                                "value": "ko_succ_q"
+                            },
+                            {
+                                "label": "Agent",
+                                "value": "ko_succ_a"
+                            },
+                            {
+                                "label": "N Short",
+                                "value": "ko_sho_n"
+                            },
+                            {
+                                "label": "N Lost",
+                                "value": "ko_lst_n"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 0,
+                        "width": 3,
+                        "height": 2
+                    },
+                    "type": "DB01",
+                    "title": "Current situation",
+                    "cfg": {
+                        "dataBlockView": {
+                            "label": "UN23 - KoDO.UnansweredNumbersRecallRecap",
+                            "value": "KoDO.UnansweredNumbersRecallRecap"
+                        },
+                        "columns": ""
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 3,
+                        "height": 1
+                    },
+                    "type": "TX01",
+                    "title": "Today at a glance",
+                    "cfg": {
+                        "mdText": "# Recalls"
+                    }
+                }
+            ]
+        }
+    ],
+    "public": false
+}
