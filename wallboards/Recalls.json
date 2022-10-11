@@ -1,5 +1,5 @@
 {
-    "wallboardName": "Recalls",
+    "wallboardName": "Recalls (1)",
     "comment": "",
     "secKey": "",
     "isPublic": false,
@@ -18,7 +18,9 @@
                     },
                     "type": "CL01",
                     "title": "Today",
-                    "cfg": {}
+                    "cfg": {
+                        "VERSION": "22.10"
+                    }
                 },
                 {
                     "pos": {
@@ -59,7 +61,18 @@
                                 "label": "Last Lost",
                                 "value": "ko_lst_t"
                             }
-                        ]
+                        ],
+                        "VERSION": "22.10",
+                        "alarms": {
+                            "ko_sho_n": {
+                                "yellowRule": ">1",
+                                "redRule": ">3"
+                            },
+                            "ko_lst_n": {
+                                "yellowRule": ">1",
+                                "redRule": ">3"
+                            }
+                        }
                     }
                 },
                 {
@@ -75,7 +88,8 @@
                         "dataBlockViewChart": {
                             "label": "UN23 - KoDO.UnansweredNumbersRecallRecap",
                             "value": "KoDO.UnansweredNumbersRecallRecap"
-                        }
+                        },
+                        "VERSION": "22.10"
                     }
                 }
             ]
@@ -128,7 +142,18 @@
                                 "label": "N Lost",
                                 "value": "ko_lst_n"
                             }
-                        ]
+                        ],
+                        "VERSION": "22.10",
+                        "alarms": {
+                            "ko_lst_n": {
+                                "yellowRule": ">1",
+                                "redRule": ">3"
+                            },
+                            "ko_sho_n": {
+                                "yellowRule": ">1",
+                                "redRule": ">3"
+                            }
+                        }
                     }
                 },
                 {
@@ -145,7 +170,8 @@
                             "label": "UN23 - KoDO.UnansweredNumbersRecallRecap",
                             "value": "KoDO.UnansweredNumbersRecallRecap"
                         },
-                        "columns": ""
+                        "columns": [],
+                        "VERSION": "22.10"
                     }
                 },
                 {
@@ -158,7 +184,8 @@
                     "type": "TX01",
                     "title": "Today at a glance",
                     "cfg": {
-                        "mdText": "# Recalls"
+                        "mdText": "# Recalls",
+                        "VERSION": "22.10"
                     }
                 }
             ]
