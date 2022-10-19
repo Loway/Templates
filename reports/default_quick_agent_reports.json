@@ -1,0 +1,404 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Quick Agents Report",
+    "subtitle": "",
+    "query": {
+        "queryId": "",
+        "timeRange": {
+            "type": "DATETIME",
+            "from": "1666130400000",
+            "to": "1666216800000"
+        },
+        "queues": [
+            ""
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [
+                {
+                    "nome_agente": "agent/101",
+                    "descr_agente": "John Doe (101)"
+                },
+                {
+                    "nome_agente": "agent/102",
+                    "descr_agente": "Mike Boo (102)"
+                }
+            ],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": ""
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "102",
+            "title": "Answered calls",
+            "shortTitle": "Answered",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 10,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "#clok_all_calls#",
+                    "subtitle": "",
+                    "shortCode": "OK01",
+                    "doName": "OkDO",
+                    "dispatchName": "RiassAllCalls",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "#clok_moh#",
+                    "subtitle": "",
+                    "shortCode": "OK13",
+                    "doName": "OkDO",
+                    "dispatchName": "MOHOk",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 40,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "#clok_service_level_agreement#",
+                    "subtitle": "",
+                    "shortCode": "OK04",
+                    "doName": "OkDO",
+                    "dispatchName": "ServiceLevelAgreement",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "SLA",
+                            "BAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "N"
+                        ],
+                        "xColumn": "clok_answer",
+                        "yColumns": [
+                            "clok_percent",
+                            "clok_delta"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-3",
+                    "pageId": "P0",
+                    "title": "#clok_service_level_agreement#",
+                    "subtitle": "",
+                    "shortCode": "OK07",
+                    "doName": "OkDO",
+                    "dispatchName": "AnsweredcallsByQueue",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "D"
+                        ],
+                        "xColumn": "clok_queue",
+                        "yColumns": [
+                            "clok_n_calls"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_atomicQueueFilter $1))"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "102",
+            "title": "Details of answered calls",
+            "shortTitle": "Ans.Dt.",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 20,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "#cld_queue_detail#",
+                    "subtitle": "",
+                    "shortCode": "OD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "CallsOK",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P2",
+            "reportId": "102",
+            "title": "Agents and Sessions",
+            "shortTitle": "Agents",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 2,
+            "sortOrder": 30,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW2-0",
+                    "pageId": "P2",
+                    "title": "#clage_agent_availability_for_all_the_queues_they_are_member_of#",
+                    "subtitle": "",
+                    "shortCode": "AG03",
+                    "doName": "AgentsDO",
+                    "dispatchName": "AgentAvail",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-1",
+                    "pageId": "P2",
+                    "title": "#clage_session_and_pause_durations#",
+                    "subtitle": "",
+                    "shortCode": "AG02",
+                    "doName": "AgentsDO",
+                    "dispatchName": "SessionPauseDur",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P3",
+            "reportId": "102",
+            "title": "Details of Agent sessions and pauses",
+            "shortTitle": "Ag.Dt.",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 3,
+            "sortOrder": 40,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW3-0",
+                    "pageId": "P3",
+                    "title": "#cld_detail_of_agent_pauses#",
+                    "subtitle": "",
+                    "shortCode": "AD02",
+                    "doName": "DetailsDO",
+                    "dispatchName": "AgentPauses",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW3-1",
+                    "pageId": "P3",
+                    "title": "#cld_detail_of_agent_sessions#",
+                    "subtitle": "",
+                    "shortCode": "AD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "AgentSessions",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P4",
+            "reportId": "102",
+            "title": "Call outcomes",
+            "shortTitle": "Outcomes",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 4,
+            "sortOrder": 50,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW4-0",
+                    "pageId": "P4",
+                    "title": "#aout_act_billable#",
+                    "subtitle": "",
+                    "shortCode": "OU03",
+                    "doName": "OutcomesDO",
+                    "dispatchName": "ActivBillable",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW4-1",
+                    "pageId": "P4",
+                    "title": "#aout_act_notbillable#",
+                    "subtitle": "",
+                    "shortCode": "OU04",
+                    "doName": "OutcomesDO",
+                    "dispatchName": "ActivNotBillable",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW4-2",
+                    "pageId": "P4",
+                    "title": "#aout_call_res_by_outcome#",
+                    "subtitle": "",
+                    "shortCode": "OU02",
+                    "doName": "OutcomesDO",
+                    "dispatchName": "CallResByOutcome",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_outcome $1))"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}

@@ -1,0 +1,301 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Quick reports",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now-7d",
+            "to": "now"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "89",
+            "title": "Statistics",
+            "shortTitle": "Stats",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 100,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "#clacd_acd_attempts_by_terminal#",
+                    "subtitle": "",
+                    "shortCode": "AT03",
+                    "doName": "DistrDO",
+                    "dispatchName": "AcdByTerminals",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 160,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "#clacd_inbound_acd_call_attempts#",
+                    "subtitle": "",
+                    "shortCode": "AT01",
+                    "doName": "DistrDO",
+                    "dispatchName": "ReportAcd",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 150,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "#clko_all_calls#",
+                    "subtitle": "",
+                    "shortCode": "UN01",
+                    "doName": "KoDO",
+                    "dispatchName": "ReportKoAll",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 130,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-3",
+                    "pageId": "P0",
+                    "title": "#clko_disconnection_causes#",
+                    "subtitle": "",
+                    "shortCode": "UN03",
+                    "doName": "KoDO",
+                    "dispatchName": "DiscCauses",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 140,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "D"
+                        ],
+                        "xColumn": "clko_cause",
+                        "yColumns": [
+                            "clko_n_calls"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_agenteFiltro $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-4",
+                    "pageId": "P0",
+                    "title": "#clok_agents_on_queue#",
+                    "subtitle": "",
+                    "shortCode": "OK03",
+                    "doName": "OkDO",
+                    "dispatchName": "AgentsOnQueue",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 110,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "D"
+                        ],
+                        "xColumn": "clok_agent",
+                        "yColumns": [
+                            "clok_n_calls"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_agenteFiltro $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-5",
+                    "pageId": "P0",
+                    "title": "#clok_all_calls#",
+                    "subtitle": "",
+                    "shortCode": "OK01",
+                    "doName": "OkDO",
+                    "dispatchName": "RiassAllCalls",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 100,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-6",
+                    "pageId": "P0",
+                    "title": "#clok_service_level_agreement#",
+                    "subtitle": "",
+                    "shortCode": "OK04",
+                    "doName": "OkDO",
+                    "dispatchName": "ServiceLevelAgreement",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 120,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "SLA",
+                            "BAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "N"
+                        ],
+                        "xColumn": "clok_answer",
+                        "yColumns": [
+                            "clok_percent",
+                            "clok_delta"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "89",
+            "title": "Call details",
+            "shortTitle": "Calls",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 110,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "#hdr_answered_details_title#",
+                    "subtitle": "",
+                    "shortCode": "OD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "CallsOK",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 100,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW1-1",
+                    "pageId": "P1",
+                    "title": "#hdr_unanswered_details_title#",
+                    "subtitle": "",
+                    "shortCode": "UD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "CallsKO",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 110,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "=t="
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}
