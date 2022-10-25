@@ -1,5 +1,9 @@
 # QueueMetrics templates
 
+A collection of ready-made reports and wallboards for QueueMetrics https://www.queuemetrics.com and QueueMetrics Live https://www.queuemetrics-live.com
+
+
+
 ## Reports
 
 ### Defaults
