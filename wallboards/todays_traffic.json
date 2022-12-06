@@ -1,0 +1,104 @@
+{
+    "wallboardName": "Today's traffic",
+    "comment": "",
+    "secKey": "",
+    "isPublic": true,
+    "pages": [
+        {
+            "name": "Calls",
+            "duration": 30,
+            "columns": 8,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 3,
+                        "col": 2,
+                        "width": 6,
+                        "height": 1
+                    },
+                    "type": "DB02",
+                    "title": "Wait times",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH03 - CallDistrDO.UnansWaitPerHr",
+                            "value": "CallDistrDO.UnansWaitPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 2,
+                        "width": 6,
+                        "height": 1
+                    },
+                    "type": "DB02",
+                    "title": "Answered calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH01 - CallDistrDO.AnsDistrPerHr",
+                            "value": "CallDistrDO.AnsDistrPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 2,
+                        "width": 6,
+                        "height": 2
+                    },
+                    "type": "DB02",
+                    "title": "Lost calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH02 - CallDistrDO.AnsWaitPerHr",
+                            "value": "CallDistrDO.AnsWaitPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 2,
+                        "height": 4
+                    },
+                    "type": "DB01",
+                    "title": "Traffic",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockView": {
+                            "label": "DH10 - CallDistrDO.DetailSummaryPerHr",
+                            "value": "CallDistrDO.DetailSummaryPerHr"
+                        },
+                        "columns": [
+                            {
+                                "label": "Hour",
+                                "value": "#0"
+                            },
+                            {
+                                "label": "N. of Calls",
+                                "value": "#3"
+                            },
+                            {
+                                "label": "Lost Calls",
+                                "value": "#2"
+                            }
+                        ],
+                        "alarms": {
+                            "#2": {
+                                "yellowRule": ">5",
+                                "redRule": ">10"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "public": true
+}

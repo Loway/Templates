@@ -1,0 +1,177 @@
+{
+    "wallboardName": "Today's queues",
+    "comment": "",
+    "secKey": "",
+    "isPublic": true,
+    "pages": [
+        {
+            "name": "Calls",
+            "duration": 45,
+            "columns": 8,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 2,
+                        "width": 6,
+                        "height": 2
+                    },
+                    "type": "DB02",
+                    "title": "Answered calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH01 - CallDistrDO.AnsDistrPerHr",
+                            "value": "CallDistrDO.AnsDistrPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 2,
+                        "width": 6,
+                        "height": 2
+                    },
+                    "type": "DB02",
+                    "title": "Lost calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH02 - CallDistrDO.AnsWaitPerHr",
+                            "value": "CallDistrDO.AnsWaitPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 2,
+                        "height": 4
+                    },
+                    "type": "DB01",
+                    "title": "Calls Today",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockView": {
+                            "label": "DH10 - CallDistrDO.DetailSummaryPerHr",
+                            "value": "CallDistrDO.DetailSummaryPerHr"
+                        },
+                        "columns": [
+                            {
+                                "label": "Hour",
+                                "value": "#0"
+                            },
+                            {
+                                "label": "N. of Calls",
+                                "value": "#3"
+                            },
+                            {
+                                "label": "Lost Calls",
+                                "value": "#2"
+                            }
+                        ],
+                        "alarms": {
+                            "#2": {
+                                "yellowRule": ">5",
+                                "redRule": ">10"
+                            }
+                        },
+                        "sortBy": "",
+                        "isAsc": false,
+                        "pageSelected": 0,
+                        "pageSize": 15
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Wait times",
+            "duration": 30,
+            "columns": 8,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 5,
+                        "height": 2
+                    },
+                    "type": "DB02",
+                    "title": "Wait times for unanswered call",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH03 - CallDistrDO.UnansWaitPerHr",
+                            "value": "CallDistrDO.UnansWaitPerHr"
+                        }
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 5,
+                        "width": 2,
+                        "height": 2
+                    },
+                    "type": "IT01",
+                    "title": "Offered Calls Today",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "queues": [
+                            {
+                                "label": "All Queues",
+                                "value": "*"
+                            }
+                        ],
+                        "alarm_yel": "",
+                        "alarm_red": "",
+                        "color": "#fdae94"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 0,
+                        "width": 2,
+                        "height": 2
+                    },
+                    "type": "PC02",
+                    "title": "Lost Calls Today",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "queues": [
+                            {
+                                "label": "All Queues",
+                                "value": "*"
+                            }
+                        ],
+                        "alarm_yel": "",
+                        "alarm_red": "",
+                        "color": "#ff9ff3"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 2,
+                        "width": 5,
+                        "height": 2
+                    },
+                    "type": "BC01",
+                    "title": "Service Level Agreement",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "color": "#fdae94",
+                        "yellow_line_limit": 0,
+                        "yellow_line_text": "",
+                        "red_line_limit": 0,
+                        "red_line_text": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "public": true
+}
