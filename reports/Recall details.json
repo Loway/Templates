@@ -1,0 +1,202 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Recall details",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now/w",
+            "to": "now/w"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "1727",
+            "title": "Racall details",
+            "shortTitle": "Recall",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 0,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "Numbers recalled",
+                    "subtitle": "Numbers that have been recalled (in the selected time frame)",
+                    "shortCode": "UN22",
+                    "doName": "KoDO",
+                    "dispatchName": "UnansweredNumbersRecalled",
+                    "parameters": "#CUSTOMSORTORDER=0,3,1,2,4,5,6,7,8,10,9,11\n#HIDDENCOLUMNS=5,6,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(or (CODA_F_caller $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "Numbers to be recalled",
+                    "subtitle": "Numbers that need to be recalled (in the selected time frame)",
+                    "shortCode": "UN21",
+                    "doName": "KoDO",
+                    "dispatchName": "UnansweredNumbersToRecall",
+                    "parameters": "#CUSTOMSORTORDER=0,10,1,2,3,4,5,6,7,8,9,11\n#HIDDENCOLUMNS=2,3,4,5,6,7,1\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(or (CODA_F_caller $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "Recap of all recalls",
+                    "subtitle": "Recall summary",
+                    "shortCode": "UN23",
+                    "doName": "KoDO",
+                    "dispatchName": "UnansweredNumbersRecallRecap",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "1727",
+            "title": "First Call Resolution",
+            "shortTitle": "FCR",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 10,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "First Call Resolution",
+                    "subtitle": "First Call Resolution clusters for all calls (answered and lost)",
+                    "shortCode": "FC03",
+                    "doName": "FcrDO",
+                    "dispatchName": "RecallsAll",
+                    "parameters": "#HIDDENCOLUMNS=3,4\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "SLA",
+                            "BAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#3",
+                            "#2"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW1-1",
+                    "pageId": "P1",
+                    "title": "Most Frequent Called/Calling Number",
+                    "subtitle": "Most Frequent Called or Calling Number",
+                    "shortCode": "FC11",
+                    "doName": "FcrDO",
+                    "dispatchName": "MostFrequentNumber",
+                    "parameters": "#HIDDENCOLUMNS=4\n#CUSTOMSORTORDER=0,1,2,3,4,6,5,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_caller $1))"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}
