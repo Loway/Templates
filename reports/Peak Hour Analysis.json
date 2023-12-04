@@ -1,0 +1,362 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Peak Hour Analysis",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now/w",
+            "to": "now/w"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 60,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "1757",
+            "title": "Call Traffic by Day and Hour",
+            "shortTitle": "Overview",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 0,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "Call Traffic Per Day",
+                    "subtitle": "Call Traffic per Calendar Day (offered, answered and unanswered)",
+                    "shortCode": "CB13",
+                    "doName": "CustomBlkDO",
+                    "dispatchName": "Traffic_Per_Day",
+                    "parameters": "VIEWCOLS=#0,#14,#15,#4",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#14"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "Call Traffic Per Hour",
+                    "subtitle": "Call Traffic per Hour (offered, answered and unanswered)",
+                    "shortCode": "CB11",
+                    "doName": "CustomBlkDO",
+                    "dispatchName": "Traffic_Per_Hour",
+                    "parameters": "VIEWCOLS=#0,#14,#15,#4",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#14"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "1757",
+            "title": "Call Traffic for Answered Calls",
+            "shortTitle": "Answered",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 10,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "Answered call distribution per day",
+                    "subtitle": "Call Traffic per Calendar Day (answered)",
+                    "shortCode": "DD01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerDay",
+                    "parameters": "#HIDDENCOLUMNS=2,3,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW1-1",
+                    "pageId": "P1",
+                    "title": "Answered call distribution per day of week",
+                    "subtitle": "Call Traffic per Day of the Week (answered)",
+                    "shortCode": "DW01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerDOW",
+                    "parameters": "#HIDDENCOLUMNS=2,3,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW1-2",
+                    "pageId": "P1",
+                    "title": "Answered call distribution per hour",
+                    "subtitle": "Call Traffic per Hour (answered)",
+                    "shortCode": "DH01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerHr",
+                    "parameters": "#HIDDENCOLUMNS=2,3,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P2",
+            "reportId": "1757",
+            "title": "Wait time for Unanswered Calls",
+            "shortTitle": "Unanswered",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 2,
+            "sortOrder": 20,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW2-0",
+                    "pageId": "P2",
+                    "title": "Unanswered call wait time per day",
+                    "subtitle": "Unanswered call wait time per calendar day",
+                    "shortCode": "DD03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerDay",
+                    "parameters": "#HIDDENCOLUMNS=2,3,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-1",
+                    "pageId": "P2",
+                    "title": "Unanswered call wait time per day of week",
+                    "subtitle": "Unanswered call wait time per day of the Week",
+                    "shortCode": "DW03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerDOW",
+                    "parameters": "#HIDDENCOLUMNS=7,2,3\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-2",
+                    "pageId": "P2",
+                    "title": "Unanswered call wait time per hour",
+                    "subtitle": "Unanswered call wait time per hour",
+                    "shortCode": "DH03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerHr",
+                    "parameters": "#HIDDENCOLUMNS=2,3,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}
