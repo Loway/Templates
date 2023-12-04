@@ -1,0 +1,120 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Recap",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now/d",
+            "to": "now/d"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "1737",
+            "title": "Call Recap",
+            "shortTitle": "Recap",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 0,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "Attempts by terminal",
+                    "subtitle": "Call Attempts for each Agent (taken and lost) ",
+                    "shortCode": "AT03",
+                    "doName": "DistrDO",
+                    "dispatchName": "AcdByTerminals",
+                    "parameters": "#HIDDENCOLUMNS=2,3,5,6\n#CUSTOMSORTORDER=0,4,1,2,3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "Detail Summary by Hour",
+                    "subtitle": "Summary of calls (answered and lost) by Hour",
+                    "shortCode": "DH10",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "DetailSummaryPerHr",
+                    "parameters": "#CUSTOMSORTORDER=0,3,1,2\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "Queue Call Overview",
+                    "subtitle": "Overview of queue calls for the selected time-frame",
+                    "shortCode": "UN17",
+                    "doName": "KoDO",
+                    "dispatchName": "OverviewOkKo",
+                    "parameters": "#HIDDENCOLUMNS=0,6,8\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_atomicQueueFilter $1))"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}
