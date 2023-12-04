@@ -1,0 +1,809 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Overview",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now-7d/d",
+            "to": "now"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 60,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": true,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "1647",
+            "title": "#clok_answered_calls#",
+            "shortTitle": "#hdr_answered#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 10,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "#clok_all_calls#",
+                    "subtitle": "",
+                    "shortCode": "OK01",
+                    "doName": "OkDO",
+                    "dispatchName": "RiassAllCalls",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "#clok_answered_calls_by_queue#",
+                    "subtitle": "",
+                    "shortCode": "OK07",
+                    "doName": "OkDO",
+                    "dispatchName": "AnsweredcallsByQueue",
+                    "parameters": "#HIDDENCOLUMNS=4\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#1",
+                        "yColumns": [
+                            "#1"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_atomicQueueFilter $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "#clok_service_level_agreement#",
+                    "subtitle": "",
+                    "shortCode": "OK04",
+                    "doName": "OkDO",
+                    "dispatchName": "ServiceLevelAgreement",
+                    "parameters": "#HIDDENCOLUMNS=5\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "SLA",
+                            "BAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "P",
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#3",
+                            "#2"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "1647",
+            "title": "#hdr_answered_details_title#",
+            "shortTitle": "#hdr_answered_details#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 20,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "Queue details",
+                    "subtitle": "",
+                    "shortCode": "OD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "CallsOK",
+                    "parameters": "#HIDDENCOLUMNS=6,8,11,12,13,14,15,16,17,18,20,21,22,23,24,25,26\n#CUSTOMSORTORDER=0,1,2,3,4,5,6,9,7,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P2",
+            "reportId": "1647",
+            "title": "#hdr_unanswered#",
+            "shortTitle": "#hdr_unanswered#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 2,
+            "sortOrder": 30,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW2-0",
+                    "pageId": "P2",
+                    "title": "#clko_all_calls#",
+                    "subtitle": "",
+                    "shortCode": "UN01",
+                    "doName": "KoDO",
+                    "dispatchName": "ReportKoAll",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-1",
+                    "pageId": "P2",
+                    "title": "#clko_disconnection_causes#",
+                    "subtitle": "",
+                    "shortCode": "UN03",
+                    "doName": "KoDO",
+                    "dispatchName": "DiscCauses",
+                    "parameters": "#HIDDENCOLUMNS=3\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_agenteFiltro $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-2",
+                    "pageId": "P2",
+                    "title": "#clko_unanswered_calls_by_queue#",
+                    "subtitle": "",
+                    "shortCode": "UN04",
+                    "doName": "KoDO",
+                    "dispatchName": "UnansByQueue",
+                    "parameters": "#HIDDENCOLUMNS=4\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "PIE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "#1",
+                        "yColumns": [
+                            "#2"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and (CODA_F_atomicQueueFilter $1))"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW2-3",
+                    "pageId": "P2",
+                    "title": "#clko_unanswered_calls_distribution_by_length#",
+                    "subtitle": "",
+                    "shortCode": "UN06",
+                    "doName": "KoDO",
+                    "dispatchName": "UnansByLen",
+                    "parameters": "#HIDDENCOLUMNS=5\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "SLA",
+                            "BAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "P",
+                            "N"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#3",
+                            "#2"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P3",
+            "reportId": "1647",
+            "title": "#hdr_unanswered_details_title#",
+            "shortTitle": "#hdr_unanswered_details#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 3,
+            "sortOrder": 40,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW3-0",
+                    "pageId": "P3",
+                    "title": "#cld_detail_of_unanswered_calls#",
+                    "subtitle": "",
+                    "shortCode": "UD01",
+                    "doName": "DetailsDO",
+                    "dispatchName": "CallsKO",
+                    "parameters": "#HIDDENCOLUMNS=9,10,11,12,13,14,15,17,18,19,20,21,22,23\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P4",
+            "reportId": "1647",
+            "title": "#hdr_agents_title#",
+            "shortTitle": "#hdr_agents#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 4,
+            "sortOrder": 60,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW4-0",
+                    "pageId": "P4",
+                    "title": "#clage_agent_session_detail#",
+                    "subtitle": "",
+                    "shortCode": "AG01",
+                    "doName": "AgentsDO",
+                    "dispatchName": "ReportAgents",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW4-1",
+                    "pageId": "P4",
+                    "title": "#clage_answered_calls_for_selected_queues#",
+                    "subtitle": "",
+                    "shortCode": "AG04",
+                    "doName": "AgentsDO",
+                    "dispatchName": "AnsCallsQueues",
+                    "parameters": "#HIDDENCOLUMNS=0\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW4-2",
+                    "pageId": "P4",
+                    "title": "#clage_session_and_pause_durations#",
+                    "subtitle": "",
+                    "shortCode": "AG02",
+                    "doName": "AgentsDO",
+                    "dispatchName": "SessionPauseDur",
+                    "parameters": "#HIDDENCOLUMNS=0\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P5",
+            "reportId": "1647",
+            "title": "#hdr_distrib#",
+            "shortTitle": "#hdr_attempts#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 5,
+            "sortOrder": 70,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW5-0",
+                    "pageId": "P5",
+                    "title": "#clacd_acd_attempts_by_queue#",
+                    "subtitle": "",
+                    "shortCode": "AT02",
+                    "doName": "DistrDO",
+                    "dispatchName": "AcdByQueue",
+                    "parameters": "#HIDDENCOLUMNS=3,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW5-1",
+                    "pageId": "P5",
+                    "title": "#clacd_acd_attempts_by_terminal#",
+                    "subtitle": "",
+                    "shortCode": "AT03",
+                    "doName": "DistrDO",
+                    "dispatchName": "AcdByTerminals",
+                    "parameters": "#HIDDENCOLUMNS=3,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P6",
+            "reportId": "1647",
+            "title": "#hdr_distrib_dow_title#",
+            "shortTitle": "#hdr_distrib_dow#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 6,
+            "sortOrder": 80,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW6-0",
+                    "pageId": "P6",
+                    "title": "#cldst_answered_call_distribution_per_dow#",
+                    "subtitle": "",
+                    "shortCode": "DW01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerDOW",
+                    "parameters": "#HIDDENCOLUMNS=3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW6-1",
+                    "pageId": "P6",
+                    "title": "#cldst_unanswered_call_wait_time_per_dow#",
+                    "subtitle": "",
+                    "shortCode": "DW03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerDOW",
+                    "parameters": "#HIDDENCOLUMNS=3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW6-2",
+                    "pageId": "P6",
+                    "title": "#cld_detail_summary_dow#",
+                    "subtitle": "",
+                    "shortCode": "DW10",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "DetailSummaryPerDow",
+                    "parameters": "#CUSTOMSORTORDER=0,3,1,2\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 90,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P7",
+            "reportId": "1647",
+            "title": "#hdr_distrib_day_title#",
+            "shortTitle": "#hdr_distrib_day#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 7,
+            "sortOrder": 90,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW7-0",
+                    "pageId": "P7",
+                    "title": "#cldst_answered_call_distribution_per_day#",
+                    "subtitle": "",
+                    "shortCode": "DD01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerDay",
+                    "parameters": "#HIDDENCOLUMNS=5,6,3\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW7-1",
+                    "pageId": "P7",
+                    "title": "#cldst_unanswered_call_wait_time_per_day#",
+                    "subtitle": "",
+                    "shortCode": "DD03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerDay",
+                    "parameters": "#HIDDENCOLUMNS=3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 30,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW7-2",
+                    "pageId": "P7",
+                    "title": "#cld_detail_summary_dom#",
+                    "subtitle": "",
+                    "shortCode": "DD10",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "DetailSummaryPerDay",
+                    "parameters": "#CUSTOMSORTORDER=0,3,1,2\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 90,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P8",
+            "reportId": "1647",
+            "title": "#hdr_distrib_hour_title#",
+            "shortTitle": "#hdr_distrib_hour#",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 8,
+            "sortOrder": 100,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW8-0",
+                    "pageId": "P8",
+                    "title": "#cldst_answered_call_distribution_per_hour#",
+                    "subtitle": "",
+                    "shortCode": "DH01",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "AnsDistrPerHr",
+                    "parameters": "#HIDDENCOLUMNS=3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW8-1",
+                    "pageId": "P8",
+                    "title": "#cldst_unanswered_call_wait_time_per_hour#",
+                    "subtitle": "DH03 - CallDistrDO.UnansWaitPerHr",
+                    "shortCode": "DH03",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "UnansWaitPerHr",
+                    "parameters": "#HIDDENCOLUMNS=3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "CALLDISTRIBUTION",
+                            "LINE"
+                        ],
+                        "dataFunctionTypes": [
+                            "N",
+                            "T"
+                        ],
+                        "xColumn": "#0",
+                        "yColumns": [
+                            "#1",
+                            "#4"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW8-2",
+                    "pageId": "P8",
+                    "title": "#cld_detail_summary#",
+                    "subtitle": "",
+                    "shortCode": "DH10",
+                    "doName": "CallDistrDO",
+                    "dispatchName": "DetailSummaryPerHr",
+                    "parameters": "#CUSTOMSORTORDER=0,3,1,2\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": true
+}
