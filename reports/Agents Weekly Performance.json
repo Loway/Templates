@@ -1,0 +1,190 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Agents Weekly Performance",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now/w",
+            "to": "now/w"
+        },
+        "queues": [
+            "1"
+        ],
+        "filters": "",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "1742",
+            "title": "Agents Overview",
+            "shortTitle": "Overview",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 0,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "Agent session detail",
+                    "subtitle": "Summary Agent Session",
+                    "shortCode": "AG01",
+                    "doName": "AgentsDO",
+                    "dispatchName": "ReportAgents",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "Attempts by terminal",
+                    "subtitle": "Call Attempts for each Agent (taken and lost) ",
+                    "shortCode": "AT03",
+                    "doName": "DistrDO",
+                    "dispatchName": "AcdByTerminals",
+                    "parameters": "#HIDDENCOLUMNS=2,3,5,6\n#CUSTOMSORTORDER=0,4,1,2,3,5,6\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P1",
+            "reportId": "1742",
+            "title": "Agent Session details",
+            "shortTitle": "Session",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 1,
+            "sortOrder": 10,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW1-0",
+                    "pageId": "P1",
+                    "title": "Agent Session Time by Hour",
+                    "subtitle": "Availability of the Agent by Hour ",
+                    "shortCode": "AG10",
+                    "doName": "AgentsDO",
+                    "dispatchName": "AgentSessionTimeByHour",
+                    "parameters": "",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW1-1",
+                    "pageId": "P1",
+                    "title": "Session and pause durations",
+                    "subtitle": "Agent session and pause duration",
+                    "shortCode": "AG02",
+                    "doName": "AgentsDO",
+                    "dispatchName": "SessionPauseDur",
+                    "parameters": "#HIDDENCOLUMNS=0\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        },
+        {
+            "pageId": "P2",
+            "reportId": "1742",
+            "title": "Agent Productivity based on Queue",
+            "shortTitle": "Productivity",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 2,
+            "sortOrder": 20,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW2-0",
+                    "pageId": "P2",
+                    "title": "Agent Productivity",
+                    "subtitle": "Agent productivity, based on the queue talk time",
+                    "shortCode": "AG18",
+                    "doName": "AgentsDO",
+                    "dispatchName": "ProgAgPerf",
+                    "parameters": "Session time [hms] = SESSION\nAgent Talk Time [hms] = TALKTIME\nProductivity [%]= (TALKTIME / SESSION)\n#HIDDENCOLUMNS=0",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "public": false
+}
