@@ -4,7 +4,7 @@ A collection of ready-made reports and wallboards for QueueMetrics https://www.q
 
 ## How do you download a report/wallboard template and upload it to QueueMetrics?
 
-You can find a quick guide [here.](https://github.com/Loway/Templates/blob/main/Download_Templates.json)
+You can find a quick guide [here.](https://github.com/Loway/Templates/blob/main/Download_Templates.md)
 
 ## Reports
 
