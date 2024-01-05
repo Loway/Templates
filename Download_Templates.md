@@ -1,4 +1,4 @@
-# How to download a report/wallboard template and upload it to QueueMetrics:
+# How to download a report/wallboard template and upload it to QueueMetrics
 
 You will find different download links below, for the individual reports/wallboards. You just need to follow the link and download the ".json" template files:
 ![Download button](https://github.com/Loway/Templates/assets/41002789/246c6499-85be-4797-98f5-f690173a3357)         
