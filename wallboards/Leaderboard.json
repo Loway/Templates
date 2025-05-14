@@ -1,0 +1,153 @@
+{
+    "wallboardName": "Leaderboard",
+    "comment": "",
+    "secKey": "",
+    "isPublic": false,
+    "pages": [
+        {
+            "name": "Contacts",
+            "duration": 30,
+            "columns": 6,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 3,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "CL01",
+                    "title": "Time",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "color": "#A1EEBD"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 3,
+                        "height": 3
+                    },
+                    "type": "TC06",
+                    "title": "Leaderboard",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "pageSelected": 0,
+                        "pageSize": 30,
+                        "columns": [
+                            {
+                                "label": "Status",
+                                "value": "_stato"
+                            },
+                            {
+                                "label": "Agent",
+                                "value": "#1"
+                            },
+                            {
+                                "label": "Offered",
+                                "value": "#3"
+                            },
+                            {
+                                "label": "Answered",
+                                "value": "#4"
+                            },
+                            {
+                                "label": "Avg talk",
+                                "value": "#10"
+                            },
+                            {
+                                "label": "Sales",
+                                "value": "#11"
+                            }
+                        ],
+                        "color": "#A3E2FD",
+                        "sortBy": "#11",
+                        "isAsc": false
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 4,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "TX01",
+                    "title": "Goals",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "color": "#FFCF96",
+                        "mdText": "# Main goals:\n\n1) Call number\n2) Speak with customer\n3) ???\n4) Profit"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 3,
+                        "width": 2,
+                        "height": 2
+                    },
+                    "type": "HTML01",
+                    "title": "CRM List",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "color": "#E3C5FF"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 5,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "PC06",
+                    "title": "Agents On Call",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "queue": {
+                            "label": "All Queues",
+                            "value": "*"
+                        },
+                        "alarm_yel": "",
+                        "alarm_red": "",
+                        "color": "#A3E2FD"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 5,
+                        "width": 1,
+                        "height": 2
+                    },
+                    "type": "DB01",
+                    "title": "Total Sales VS Calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockView": {
+                            "label": "OU02 - OutcomesDO.CallResByOutcome",
+                            "value": "OutcomesDO.CallResByOutcome"
+                        },
+                        "columns": [
+                            {
+                                "label": "Type",
+                                "value": "#1"
+                            },
+                            {
+                                "label": "Total",
+                                "value": "#2"
+                            }
+                        ],
+                        "color": "#FFCF96",
+                        "pageSelected": 0,
+                        "pageSize": 30
+                    }
+                }
+            ]
+        }
+    ],
+    "public": false
+}
