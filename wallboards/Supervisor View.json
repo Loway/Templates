@@ -1,0 +1,210 @@
+{
+    "wallboardName": "Supervisor View",
+    "comment": "",
+    "secKey": "",
+    "isPublic": false,
+    "pages": [
+        {
+            "name": "Main",
+            "duration": 30,
+            "columns": 6,
+            "widgets": [
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 0,
+                        "width": 3,
+                        "height": 1
+                    },
+                    "type": "BC01",
+                    "title": "SLA",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "color": "#A3E2FD",
+                        "yellow_line_limit": 90,
+                        "yellow_line_text": "Standard SLA",
+                        "red_line_limit": 70,
+                        "red_line_text": "Bad SLA"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 4,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "DB02",
+                    "title": "Avg wait for Answered calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH02 - CallDistrDO.AnsWaitPerHr",
+                            "value": "CallDistrDO.AnsWaitPerHr"
+                        },
+                        "color": "#A3E2FD"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 2,
+                        "col": 5,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "DB02",
+                    "title": "Avg wait for Unanswered calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "dataBlockViewChart": {
+                            "label": "DH03 - CallDistrDO.UnansWaitPerHr",
+                            "value": "CallDistrDO.UnansWaitPerHr"
+                        },
+                        "color": "#E3C5FF"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 4,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "PC01",
+                    "title": "Waiting Calls on queues",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "queues": [
+                            {
+                                "label": "All Queues",
+                                "value": "*"
+                            }
+                        ],
+                        "alarm_yel": "",
+                        "alarm_red": "",
+                        "color": "#B5D2FF"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 5,
+                        "width": 1,
+                        "height": 1
+                    },
+                    "type": "PC09",
+                    "title": "Agents Ready",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "queue": {
+                            "label": "All Queues",
+                            "value": "*"
+                        },
+                        "alarm_yel": "<2",
+                        "alarm_red": "<1",
+                        "color": "#A1EEBD"
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 1,
+                        "col": 0,
+                        "width": 4,
+                        "height": 2
+                    },
+                    "type": "TC03",
+                    "title": "Live Calls",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "pageSelected": 0,
+                        "pageSize": 30,
+                        "queues": [
+                            {
+                                "label": "All Queues",
+                                "value": "*"
+                            }
+                        ],
+                        "color": "#A1EEBD",
+                        "columns": [
+                            {
+                                "label": "Status",
+                                "value": "_status"
+                            },
+                            {
+                                "label": "Queue",
+                                "value": "#1"
+                            },
+                            {
+                                "label": "Caller",
+                                "value": "#2"
+                            },
+                            {
+                                "label": "Entered",
+                                "value": "#3"
+                            },
+                            {
+                                "label": "Wait",
+                                "value": "#5"
+                            },
+                            {
+                                "label": "Agent",
+                                "value": "#7"
+                            },
+                            {
+                                "label": "Talk",
+                                "value": "#6"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "pos": {
+                        "row": 0,
+                        "col": 3,
+                        "width": 3,
+                        "height": 1
+                    },
+                    "type": "TC01",
+                    "title": "Agents availability",
+                    "cfg": {
+                        "VERSION": "22.10",
+                        "pageSelected": 0,
+                        "pageSize": 30,
+                        "columns": [
+                            {
+                                "label": "Queue",
+                                "value": "#1"
+                            },
+                            {
+                                "label": "N. agents",
+                                "value": "#2"
+                            },
+                            {
+                                "label": "Ready agents",
+                                "value": "#3"
+                            },
+                            {
+                                "label": "On pause",
+                                "value": "#4"
+                            }
+                        ],
+                        "queues": [
+                            {
+                                "label": "All Queues",
+                                "value": "*"
+                            }
+                        ],
+                        "color": "#FFCF96",
+                        "alarms": {
+                            "#3": {
+                                "yellowRule": "<2",
+                                "redRule": "<1"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "public": false
+}
