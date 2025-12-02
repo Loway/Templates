@@ -1,0 +1,132 @@
+{
+    "reportId": "0",
+    "visibilityKey": "",
+    "editingKey": "",
+    "title": "Agent Scorecard",
+    "subtitle": "",
+    "query": {
+        "queryId": "0",
+        "timeRange": {
+            "type": "FORMULA",
+            "from": "now-7d",
+            "to": "now"
+        },
+        "queues": [
+            "13"
+        ],
+        "filters": "[\"or\",[\"CODA_F_agenteFiltro\",\"%22agent%2F100%22\"]]",
+        "settings": {
+            "hourlySlot": 15,
+            "slaInterval": 10,
+            "slaInitialInterval": 5,
+            "slaMaxInitialDelay": 20,
+            "slaMaxMonitoredDelay": 120,
+            "shortcallWaitLimit": -1,
+            "shortcallTalkLimit": -1,
+            "shortcallAttemptWaitLimit": -1,
+            "dataSource": "sql:P001",
+            "ssarAgents": [],
+            "multiStint": 0,
+            "areaCodeDigitNumber": 3,
+            "areaCodeStartingPosition": 1,
+            "supervised": 0,
+            "autoSaveEnabled": false
+        },
+        "tag": "0"
+    },
+    "isPublic": false,
+    "pages": [
+        {
+            "pageId": "P0",
+            "reportId": "462",
+            "title": "Agent Quick Scorecard",
+            "shortTitle": "Overview",
+            "visibilityKey": "",
+            "parameters": "",
+            "index": 0,
+            "sortOrder": 0,
+            "deleted": false,
+            "dataBlockViews": [
+                {
+                    "dataBlockViewId": "DBW0-0",
+                    "pageId": "P0",
+                    "title": "Agent Overview",
+                    "subtitle": "Quick Agent overview",
+                    "shortCode": "OK16",
+                    "doName": "OkDO",
+                    "dispatchName": "OverviewByAgent",
+                    "parameters": "#HIDDENCOLUMNS=13,12,11,10,9,7,6,5\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 0,
+                    "asc": true,
+                    "reactGraphRecipe": {
+                        "chartTypes": [
+                            "RADAR"
+                        ],
+                        "dataFunctionTypes": [
+                            "N"
+                        ],
+                        "xColumn": "clok_agent",
+                        "yColumns": [
+                            "clok_answered_calls_prc"
+                        ]
+                    },
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-1",
+                    "pageId": "P0",
+                    "title": "Agent session time",
+                    "subtitle": "Queue Availability and Pauses",
+                    "shortCode": "AG03",
+                    "doName": "AgentsDO",
+                    "dispatchName": "AgentAvail",
+                    "parameters": "#HIDDENCOLUMNS=0,4,5,8,6,7\n#CUSTOMPAGESIZE=30\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 10,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                },
+                {
+                    "dataBlockViewId": "DBW0-2",
+                    "pageId": "P0",
+                    "title": "Sessions and Pause usage",
+                    "subtitle": "Sessions and pause discipline for selected period",
+                    "shortCode": "AG02",
+                    "doName": "AgentsDO",
+                    "dispatchName": "SessionPauseDur",
+                    "parameters": "#HIDDENCOLUMNS=0,7\n",
+                    "query": null,
+                    "visibilityKey": "",
+                    "sortBy": "",
+                    "pagePosition": 0,
+                    "recordsPerPage": 0,
+                    "sortOrder": 20,
+                    "asc": true,
+                    "reactGraphRecipe": null,
+                    "groupingRecipe": {
+                        "filterString": "(and )"
+                    },
+                    "columns": []
+                }
+            ]
+        }
+    ],
+    "customDataBlocks": [],
+    "public": false
+}
